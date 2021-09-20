@@ -1,0 +1,40 @@
+
+=> src/screens/indexScreen.js
+
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const IndexScreen = () => {
+    return (
+        <View>
+            <Text>Index Screen</Text>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({});
+
+export default IndexScreen;
+
+
+=> App.js
+
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import IndexScreen from './src/screens/IndexScreen';
+
+const navigator = createStackNavigator(
+    {
+        Index: IndexScreen
+    },
+    {
+        initialRouteName: 'Index',
+        defaultNavigationOptions: {
+            title: 'Blogs'
+        }
+    }
+);
+
+export default createAppContainer(navigator);
+
